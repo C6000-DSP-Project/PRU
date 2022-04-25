@@ -62,10 +62,6 @@ static void GPIOBankPinMuxSet()
     // GPIO0[8]
     HWREG(SOC_SYSCFG_0_REGS + SYSCFG0_PINMUX(00)) = (HWREG(SOC_SYSCFG_0_REGS + SYSCFG0_PINMUX(00)) & (~(SYSCFG_PINMUX0_PINMUX0_31_28))) |
                                                     ((SYSCFG_PINMUX0_PINMUX0_31_28_GPIO0_8 << SYSCFG_PINMUX0_PINMUX0_31_28_SHIFT));
-
-    // GPIO8[12]
-    HWREG(SOC_SYSCFG_0_REGS + SYSCFG0_PINMUX(18)) = (HWREG(SOC_SYSCFG_0_REGS + SYSCFG0_PINMUX(18)) & (~(SYSCFG_PINMUX18_PINMUX18_23_20))) |
-                                                    ((SYSCFG_PINMUX18_PINMUX18_23_20_GPIO8_12 << SYSCFG_PINMUX18_PINMUX18_23_20_SHIFT));
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -86,11 +82,9 @@ static void GPIOBankPinInit()
     // 按键
     // 配置中断触发方式
     GPIOIntTypeSet(SOC_GPIO_0_REGS, 9, GPIO_INT_TYPE_FALLEDGE);         // SW6 下降沿
-    GPIOIntTypeSet(SOC_GPIO_0_REGS, 141, GPIO_INT_TYPE_FALLEDGE);       // SW4 上升沿及下降沿
 
     // 使能 GPIO BANK 中断
     GPIOBankIntEnable(SOC_GPIO_0_REGS, 0);                              // GPIO BANK0
-    GPIOBankIntEnable(SOC_GPIO_0_REGS, 8);                              // GPIO BANK8
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

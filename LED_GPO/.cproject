@@ -13,7 +13,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.PRU.Debug.2012674777" name="Debug" parent="com.ti.ccstudio.buildDefinitions.PRU.Debug" postbuildStep="../../Tools/binsrc ${ProjName}.hex PRU_Code.h PRU_Code">
+				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.PRU.Debug.2012674777" name="Debug" parent="com.ti.ccstudio.buildDefinitions.PRU.Debug" postbuildStep="../../Tools/binsrc ${ProjName}.hex PRU_Code.h PRU_Code;">
 					<folderInfo id="com.ti.ccstudio.buildDefinitions.PRU.Debug.2012674777." name="/" resourcePath="">
 						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.3.exe.DebugToolchain.612439276" name="TI Build Tools" secondaryOutputs="com.ti.ccstudio.buildDefinitions.PRU_2.3.hex.outputType__BIN" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.3.exe.linkerDebug.1613379309">
 							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.835192032" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
@@ -36,7 +36,6 @@
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
 									<listOptionValue builtIn="false" value="../../Library/Drivers/Include"/>
 									<listOptionValue builtIn="false" value="../../Library/Drivers/Include/hw"/>
-									<listOptionValue builtIn="false" value="../../Library/Interrupt/Include"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DEBUGGING_MODEL.227226002" name="Debugging model" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DEBUGGING_MODEL" value="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DISPLAY_ERROR_NUMBER.2089864941" name="Emit diagnostic identifier numbers (--display_error_number, -pden)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
@@ -59,7 +58,6 @@
 								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.3.linkerID.LIBRARY.467615498" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.linkerID.LIBRARY" valueType="libs">
 									<listOptionValue builtIn="false" value="libc.a"/>
 									<listOptionValue builtIn="false" value="../../Library/Drivers/Debug/Drivers.lib"/>
-									<listOptionValue builtIn="false" value="../../Library/Interrupt/Debug/Interrupt.lib"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.3.linkerID.SEARCH_PATH.272379421" name="Add &lt;dir&gt; to library search path (--search_path, -i)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.linkerID.SEARCH_PATH" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>
