@@ -1,0 +1,157 @@
+******************************************************************************
+                     PRU Linker PC v2.3.3                      
+******************************************************************************
+>> Linked Mon Apr 25 11:09:47 2022
+
+OUTPUT FILE NAME:   <KEY.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  PRUIRAM               00000000   00001000  00000b30  000004d0  RWIX
+
+PAGE 1:
+  PRUDRAM               00000000   00000200  00000080  00000180  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text:_c_int00* 
+*          0    00000000    0000001c     
+                  00000000    0000001c     rtspruv1_le.lib : boot.c.obj (.text:_c_int00_noinit_noargs)
+
+.text      0    0000001c    00000b14     
+                  0000001c    000001f8     Drivers.lib : gpio.obj (.text:GPIOIntTypeSet)
+                  00000214    00000140                 : psc.obj (.text:PSCModuleControl)
+                  00000354    00000138     Interrupt.lib : interrupt.obj (.text:IntEventMap)
+                  0000048c    00000120     main.obj (.text:main)
+                  000005ac    000000c4     Drivers.lib : gpio.obj (.text:GPIODirModeSet)
+                  00000670    000000b8     main.obj (.text:GPIOBankPinMuxSet)
+                  00000728    000000ac     main.obj (.text:GPIOBankPinInit)
+                  000007d4    000000ac     Drivers.lib : gpio.obj (.text:GPIOPinWrite)
+                  00000880    00000080                 : gpio.obj (.text:GPIOPinIntStatus)
+                  00000900    0000006c                 : gpio.obj (.text:GPIOPinIntClear)
+                  0000096c    0000004c     main.obj (.text:InterruptInit)
+                  000009b8    00000044     Drivers.lib : gpio.obj (.text:GPIOBankIntEnable)
+                  000009fc    00000038     Interrupt.lib : interrupt.obj (.text:IntHostIntStatusGet)
+                  00000a34    00000034     main.obj (.text:Delay)
+                  00000a68    00000034     Interrupt.lib : interrupt.obj (.text:IntEventGroupSet)
+                  00000a9c    00000020                   : interrupt.obj (.text:IntEventEnable)
+                  00000abc    00000020                   : interrupt.obj (.text:IntHostEnable)
+                  00000adc    00000020                   : interrupt.obj (.text:IntSystemEventClear)
+                  00000afc    00000014                   : interrupt.obj (.text:IntGlobalEnable)
+                  00000b10    00000010                   : interrupt.obj (.text:IntHostStatusClear)
+                  00000b20    00000008     rtspruv1_le.lib : exit.c.obj (.text:abort)
+                  00000b28    00000008                     : exit.c.obj (.text:loader_exit)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.stack     1    00000000    00000080     UNINITIALIZED
+                  00000000    00000004     rtspruv1_le.lib : boot.c.obj (.stack)
+                  00000004    0000007c     --HOLE--
+
+MODULE SUMMARY
+
+       Module          code   ro data   rw data
+       ------          ----   -------   -------
+    .\
+       main.obj        772    0         0      
+    +--+---------------+------+---------+---------+
+       Total:          772    0         0      
+                                               
+    ../../Library/Drivers/Debug/Drivers.lib
+       gpio.obj        1176   0         0      
+       psc.obj         320    0         0      
+    +--+---------------+------+---------+---------+
+       Total:          1496   0         0      
+                                               
+    ../../Library/Interrupt/Debug/Interrupt.lib
+       interrupt.obj   552    0         0      
+    +--+---------------+------+---------+---------+
+       Total:          552    0         0      
+                                               
+    C:\ti\ti-cgt-pru_2.3.3\lib\rtspruv1_le.lib
+       boot.c.obj      28     0         0      
+       exit.c.obj      16     0         0      
+    +--+---------------+------+---------+---------+
+       Total:          44     0         0      
+                                               
+       Stack:          0      0         128    
+    +--+---------------+------+---------+---------+
+       Grand Total:    2864   0         128    
+
+
+SEGMENT ATTRIBUTES
+
+    id tag      seg value
+    -- ---      --- -----
+     0 PHA_PAGE 1   1    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name                  
+----  -------   ----                  
+0     00000b28  C$$EXIT               
+0     000009b8  GPIOBankIntEnable     
+0     000005ac  GPIODirModeSet        
+0     0000001c  GPIOIntTypeSet        
+0     00000900  GPIOPinIntClear       
+0     00000880  GPIOPinIntStatus      
+0     000007d4  GPIOPinWrite          
+0     00000a9c  IntEventEnable        
+0     00000a68  IntEventGroupSet      
+0     00000354  IntEventMap           
+0     00000afc  IntGlobalEnable       
+0     00000abc  IntHostEnable         
+0     000009fc  IntHostIntStatusGet   
+0     00000b10  IntHostStatusClear    
+0     00000adc  IntSystemEventClear   
+0     0000096c  InterruptInit         
+0     00000214  PSCModuleControl      
+1     00000080  __TI_STACK_END        
+abs   00000080  __TI_STACK_SIZE       
+abs   ffffffff  __c_args__            
+0     00000000  _c_int00_noinit_noargs
+1     00000000  _stack                
+0     00000b20  abort                 
+0     0000048c  main                  
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name                  
+----  -------   ----                  
+0     00000000  _c_int00_noinit_noargs
+0     0000001c  GPIOIntTypeSet        
+0     00000214  PSCModuleControl      
+0     00000354  IntEventMap           
+0     0000048c  main                  
+0     000005ac  GPIODirModeSet        
+0     000007d4  GPIOPinWrite          
+0     00000880  GPIOPinIntStatus      
+0     00000900  GPIOPinIntClear       
+0     0000096c  InterruptInit         
+0     000009b8  GPIOBankIntEnable     
+0     000009fc  IntHostIntStatusGet   
+0     00000a68  IntEventGroupSet      
+0     00000a9c  IntEventEnable        
+0     00000abc  IntHostEnable         
+0     00000adc  IntSystemEventClear   
+0     00000afc  IntGlobalEnable       
+0     00000b10  IntHostStatusClear    
+0     00000b20  abort                 
+0     00000b28  C$$EXIT               
+1     00000000  _stack                
+1     00000080  __TI_STACK_END        
+abs   00000080  __TI_STACK_SIZE       
+abs   ffffffff  __c_args__            
+
+[24 symbols]

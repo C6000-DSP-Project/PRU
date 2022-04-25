@@ -1,20 +1,25 @@
-/****************************************************************************/
-/*                                                                          */
-/* 广州创龙电子科技有限公司                                                 */
-/*                                                                          */
-/* Copyright (C) 2017 Guangzhou Tronlong Electronic Technology Co.,Ltd      */
-/*                                                                          */
-/****************************************************************************/
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//
+//      新核科技(广州)有限公司
+//
+//      Copyright (C) 2022 CoreKernel Technology Guangzhou Co., Ltd
+//
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//
+//      PRU 中断控制器
+//
+//      2022年03月28日
+//
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /*
- *   - 希望缄默(bin wang)
- *   - bin@tronlong.com
- *   - DSP 项目组
+ *    - 希望缄默(bin wang)
+ *    - bin@corekernel.net
  *
- *   官网 www.tronlong.com
- *   论坛 51dsp.net
+ *    官网 corekernel.net/.org/.cn
+ *    社区 fpga.net.cn
  *
  */
-
 #ifndef INTERRUPT_H_
 #define INTERRUPT_H_
 
@@ -22,11 +27,11 @@
 extern "C" {
 #endif
 
-/****************************************************************************/
-/*                                                                          */
-/*              宏定义                                                      */
-/*                                                                          */
-/****************************************************************************/
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//
+//      宏定义
+//
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /* 中断寄存器 */
 #define PRUINTCBase               0x00004000
 
@@ -181,11 +186,35 @@ extern "C" {
 #define SYS_INT_EVENT62           62
 #define SYS_INT_EVENT63           63
 
-/****************************************************************************/
-/*                                                                          */
-/*              函数声明                                                    */
-/*                                                                          */
-/****************************************************************************/
+/* 主机中断 */
+#define HOST_INT0                 0
+#define HOST_INT1                 1
+#define HOST_INT2                 2
+#define HOST_INT3                 3
+#define HOST_INT4                 4
+#define HOST_INT5                 5
+#define HOST_INT6                 6
+#define HOST_INT7                 7
+#define HOST_INT8                 8
+#define HOST_INT9                 9
+
+/* 通道 */
+#define INT_CH0                   0
+#define INT_CH1                   1
+#define INT_CH2                   2
+#define INT_CH3                   3
+#define INT_CH4                   4
+#define INT_CH5                   5
+#define INT_CH6                   6
+#define INT_CH7                   7
+#define INT_CH8                   8
+#define INT_CH9                   9
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//
+//      函数声明
+//
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 void IntGlobalEnable();
 void IntGlobalDisable();
 void IntEventEnable(int event);
@@ -199,8 +228,8 @@ void IntSystemEventGenerate(int event);
 int IntHostIntStatusGet(int host);
 void IntEventGroupSet(int group);
 void IntHostStatusClear();
-void IntPolaritySet(int group ,int event ,int value);
-void IntTypeSet(int group,int event,int value);
+void IntPolaritySet(int group, int event, int value);
+void IntTypeSet(int group, int event, int value);
 
 #ifdef __cplusplus
 }
