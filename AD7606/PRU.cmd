@@ -47,6 +47,4 @@ SECTIONS
     .fardata			>  PRUDRAM     PAGE 1 ALIGN 4
     .farbss				>  PRUDRAM     PAGE 1
     .rofardata			>  PRUDRAM     PAGE 1 ALIGN 4
-
-    .Data				>  0x00000000  PAGE 1
 }

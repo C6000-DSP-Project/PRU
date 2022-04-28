@@ -1,7 +1,7 @@
 ******************************************************************************
                      PRU Linker PC v2.3.3                      
 ******************************************************************************
->> Linked Wed Apr 27 23:17:56 2022
+>> Linked Thu Apr 28 10:18:38 2022
 
 OUTPUT FILE NAME:   <LEDNixie_IO.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000000
@@ -12,10 +12,10 @@ MEMORY CONFIGURATION
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
 PAGE 0:
-  PRUIRAM               00000000   00001000  00000698  00000968  RWIX
+  PRUIRAM               00000000   00001000  000006a8  00000958  RWIX
 
 PAGE 1:
-  PRUDRAM               00000000   00000200  00000090  00000170  RWIX
+  PRUDRAM               00000000   00000200  00000094  0000016c  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -27,35 +27,38 @@ section   page    origin      length       input sections
 *          0    00000000    0000001c     
                   00000000    0000001c     rtspruv1_le.lib : boot.c.obj (.text:_c_int00_noinit_noargs)
 
-.text      0    0000001c    0000067c     
+.text      0    0000001c    0000068c     
                   0000001c    00000190     main.obj (.text:LEDNixieDisplay)
                   000001ac    00000140     Drivers.lib : psc.obj (.text:PSCModuleControl)
                   000002ec    00000104     main.obj (.text:GPIOBankPinInit)
                   000003f0    000000c4     Drivers.lib : gpio.obj (.text:GPIODirModeSet)
                   000004b4    000000ac                 : gpio.obj (.text:GPIOPinWrite)
-                  00000560    0000007c     main.obj (.text:main)
-                  000005dc    00000078     main.obj (.text:GPIOBankPinMuxSet)
-                  00000654    00000034     main.obj (.text:Delay)
-                  00000688    00000008     rtspruv1_le.lib : exit.c.obj (.text:abort)
-                  00000690    00000008                     : exit.c.obj (.text:loader_exit)
+                  00000560    0000008c     main.obj (.text:main)
+                  000005ec    00000078     main.obj (.text:GPIOBankPinMuxSet)
+                  00000664    00000034     main.obj (.text:Delay)
+                  00000698    00000008     rtspruv1_le.lib : exit.c.obj (.text:abort)
+                  000006a0    00000008                     : exit.c.obj (.text:loader_exit)
 
 .cinit     0    00000000    00000000     UNINITIALIZED
 
-.stack     1    00000000    00000080     UNINITIALIZED
-                  00000000    00000004     rtspruv1_le.lib : boot.c.obj (.stack)
-                  00000004    0000007c     --HOLE--
+.stack     1    00000004    00000080     UNINITIALIZED
+                  00000004    00000004     rtspruv1_le.lib : boot.c.obj (.stack)
+                  00000008    0000007c     --HOLE--
 
-.rodata    1    00000080    00000010     
-                  00000080    00000010     main.obj (.rodata:.string:$P$T0$1)
+.rodata    1    00000084    00000010     
+                  00000084    00000010     main.obj (.rodata:.string:$P$T0$1)
+
+.Data      1    00000000    00000004     
+                  00000000    00000004     main.obj (.Data)
 
 MODULE SUMMARY
 
        Module         code   ro data   rw data
        ------         ----   -------   -------
     .\
-       main.obj       956    16        0      
+       main.obj       972    16        4      
     +--+--------------+------+---------+---------+
-       Total:         956    16        0      
+       Total:         972    16        4      
                                               
     ../../Library/Drivers/Debug/Drivers.lib
        gpio.obj       368    0         0      
@@ -71,7 +74,7 @@ MODULE SUMMARY
                                               
        Stack:         0      0         128    
     +--+--------------+------+---------+---------+
-       Grand Total:   1688   16        128    
+       Grand Total:   1704   16        132    
 
 
 SEGMENT ATTRIBUTES
@@ -86,17 +89,18 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 page  address   name                  
 ----  -------   ----                  
-0     00000690  C$$EXIT               
+0     000006a0  C$$EXIT               
 0     000003f0  GPIODirModeSet        
 0     000004b4  GPIOPinWrite          
 0     0000001c  LEDNixieDisplay       
+1     00000000  LEDNixieVal           
 0     000001ac  PSCModuleControl      
-1     00000080  __TI_STACK_END        
+1     00000084  __TI_STACK_END        
 abs   00000080  __TI_STACK_SIZE       
 abs   ffffffff  __c_args__            
 0     00000000  _c_int00_noinit_noargs
-1     00000000  _stack                
-0     00000688  abort                 
+1     00000004  _stack                
+0     00000698  abort                 
 0     00000560  main                  
 
 
@@ -110,11 +114,12 @@ page  address   name
 0     000003f0  GPIODirModeSet        
 0     000004b4  GPIOPinWrite          
 0     00000560  main                  
-0     00000688  abort                 
-0     00000690  C$$EXIT               
-1     00000000  _stack                
-1     00000080  __TI_STACK_END        
+0     00000698  abort                 
+0     000006a0  C$$EXIT               
+1     00000000  LEDNixieVal           
+1     00000004  _stack                
+1     00000084  __TI_STACK_END        
 abs   00000080  __TI_STACK_SIZE       
 abs   ffffffff  __c_args__            
 
-[12 symbols]
+[13 symbols]

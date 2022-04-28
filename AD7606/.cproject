@@ -36,6 +36,7 @@
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
 									<listOptionValue builtIn="false" value="../../Library/Drivers/Include"/>
 									<listOptionValue builtIn="false" value="../../Library/Drivers/Include/hw"/>
+									<listOptionValue builtIn="false" value="../../Library/Interrupt/Include"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DEBUGGING_MODEL.227226002" name="Debugging model" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DEBUGGING_MODEL" value="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DISPLAY_ERROR_NUMBER.2089864941" name="Emit diagnostic identifier numbers (--display_error_number, -pden)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.compilerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
@@ -58,6 +59,7 @@
 								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.3.linkerID.LIBRARY.467615498" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.linkerID.LIBRARY" valueType="libs">
 									<listOptionValue builtIn="false" value="libc.a"/>
 									<listOptionValue builtIn="false" value="../../Library/Drivers/Debug/Drivers.lib"/>
+									<listOptionValue builtIn="false" value="../../Library/Interrupt/Debug/Interrupt.lib"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.PRU_2.3.linkerID.SEARCH_PATH.272379421" name="Add &lt;dir&gt; to library search path (--search_path, -i)" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.linkerID.SEARCH_PATH" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>

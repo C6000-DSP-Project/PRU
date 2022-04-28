@@ -59,6 +59,14 @@
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //
+//      全局变量
+//
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#pragma DATA_SECTION(LEDNixieVal, ".Data")
+unsigned char LEDNixieVal[4] = {8, 8, 8, 8};
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//
 //      GPIO 管脚复用配置
 //
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -186,16 +194,16 @@ void main()
 
     for(;;)
     {
-        LEDNixieDisplay(SEL1, 1);
-        Delay(10000);
+        LEDNixieDisplay(SEL1, LEDNixieVal[0]);
+        Delay(1000);
 
-        LEDNixieDisplay(SEL2, 2);
-        Delay(10000);
+        LEDNixieDisplay(SEL2, LEDNixieVal[1]);
+        Delay(1000);
 
-        LEDNixieDisplay(SEL3, 3);
-        Delay(10000);
+        LEDNixieDisplay(SEL3, LEDNixieVal[2]);
+        Delay(1000);
 
-        LEDNixieDisplay(SEL4, 4);
-        Delay(10000);
+        LEDNixieDisplay(SEL4, LEDNixieVal[3]);
+        Delay(1000);
     }
 }
