@@ -65,6 +65,14 @@
 #pragma DATA_SECTION(LEDNixieVal, ".Data")
 unsigned char LEDNixieVal[4] = {8, 8, 8, 8};
 
+unsigned char SEGVal[] =
+{
+    0xC0, 0xF9, 0xA4, 0xB0, 0x99,     // 0 1 2 3 4
+    0x92, 0x82, 0xF8, 0x80, 0x90,     // 5 6 7 8 9
+    0x88, 0x83, 0xC6, 0xA1, 0x86,     // A B C D E
+    0x8E                              // F
+};
+
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //
 //      GPIO 管脚复用配置
@@ -135,14 +143,6 @@ static void GPIOBankPinInit()
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 void LEDNixieDisplay(unsigned char sel, unsigned char num)
 {
-    unsigned char const SEGVal[] =
-    {
-        0xC0, 0xF9, 0xA4, 0xB0, 0x99,     // 0 1 2 3 4
-        0x92, 0x82, 0xF8, 0x80, 0x90,     // 5 6 7 8 9
-        0x88, 0x83, 0xC6, 0xA1, 0x86,     // A B C D E
-        0x8E                              // F
-    };
-
     // 值与段码转换
     unsigned char val;
     val = SEGVal[num];
@@ -194,16 +194,16 @@ void main()
 
     for(;;)
     {
-        LEDNixieDisplay(SEL1, LEDNixieVal[0]);
+        LEDNixieDisplay(SEL1, 8);
         Delay(1000);
 
-        LEDNixieDisplay(SEL2, LEDNixieVal[1]);
+        LEDNixieDisplay(SEL2, 8);
         Delay(1000);
 
-        LEDNixieDisplay(SEL3, LEDNixieVal[2]);
+        LEDNixieDisplay(SEL3, 8);
         Delay(1000);
 
-        LEDNixieDisplay(SEL4, LEDNixieVal[3]);
+        LEDNixieDisplay(SEL4, 8);
         Delay(1000);
     }
 }
