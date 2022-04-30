@@ -59,22 +59,6 @@
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //
-//      全局变量
-//
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-#pragma DATA_SECTION(LEDNixieVal, ".Data")
-unsigned char LEDNixieVal[4] = {8, 8, 8, 8};
-
-unsigned char SEGVal[] =
-{
-    0xC0, 0xF9, 0xA4, 0xB0, 0x99,     // 0 1 2 3 4
-    0x92, 0x82, 0xF8, 0x80, 0x90,     // 5 6 7 8 9
-    0x88, 0x83, 0xC6, 0xA1, 0x86,     // A B C D E
-    0x8E                              // F
-};
-
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//
 //      GPIO 管脚复用配置
 //
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -141,12 +125,8 @@ static void GPIOBankPinInit()
 //      数码管显示
 //
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-void LEDNixieDisplay(unsigned char sel, unsigned char num)
+void LEDNixieDisplay(unsigned char sel, unsigned char val)
 {
-    // 值与段码转换
-    unsigned char val;
-    val = SEGVal[num];
-
     // 段
     GPIOPinWrite(SOC_GPIO_0_REGS, SEGA,   val & 0x01);       // GPIO2[05] A
     GPIOPinWrite(SOC_GPIO_0_REGS, SEGB,  (val >> 1) & 0x01); // GPIO2[04] B
@@ -192,18 +172,21 @@ void main()
     // GPIO 管脚初始化
     GPIOBankPinInit();
 
+    // 共享内存
+    unsigned char *LEDNixieVal = (unsigned char *)0x80000000;
+
     for(;;)
     {
-        LEDNixieDisplay(SEL1, 8);
-        Delay(1000);
+        LEDNixieDisplay(SEL1, LEDNixieVal[0]);
+        Delay(100000);
 
-        LEDNixieDisplay(SEL2, 8);
-        Delay(1000);
+        LEDNixieDisplay(SEL2, LEDNixieVal[1]);
+        Delay(100000);
 
-        LEDNixieDisplay(SEL3, 8);
-        Delay(1000);
+        LEDNixieDisplay(SEL3, LEDNixieVal[2]);
+        Delay(100000);
 
-        LEDNixieDisplay(SEL4, 8);
-        Delay(1000);
+        LEDNixieDisplay(SEL4, LEDNixieVal[3]);
+        Delay(100000);
     }
 }

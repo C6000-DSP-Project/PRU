@@ -13,7 +13,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.PRU.Debug.2012674777" name="Debug" parent="com.ti.ccstudio.buildDefinitions.PRU.Debug" postbuildStep="../../Tools/binsrc ${ProjName}.hex PRU_Code.h PRU_Code;../../Tools/binsrc ${ProjName}.b10 PRU_Data.h PRU_Data;">
+				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.PRU.Debug.2012674777" name="Debug" parent="com.ti.ccstudio.buildDefinitions.PRU.Debug" postbuildStep="../../Tools/binsrc ${ProjName}.hex PRU_Code.h PRU_Code">
 					<folderInfo id="com.ti.ccstudio.buildDefinitions.PRU.Debug.2012674777." name="/" resourcePath="">
 						<toolChain id="com.ti.ccstudio.buildDefinitions.PRU_2.3.exe.DebugToolchain.612439276" name="TI Build Tools" secondaryOutputs="com.ti.ccstudio.buildDefinitions.PRU_2.3.hex.outputType__BIN" superClass="com.ti.ccstudio.buildDefinitions.PRU_2.3.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.PRU_2.3.exe.linkerDebug.1613379309">
 							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.835192032" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
